@@ -1,4 +1,5 @@
 # Tmux 設定腳本工具 —— tmux-pencil
+[英文 English](https://github.com/penyt/tmux-pencil/blob/main/README.md)
 
 `tmux-pencil` 是一個能幫助你輕鬆建立 tmux 設定檔（`.tmux.conf`）的小工具。只需依照指引操作，即可快速生成一份啟動用的 `.tmux.conf` 設定檔。
 
