@@ -5,8 +5,6 @@
 
 此工具僅會修改你的 `.tmux.conf` 檔案，或建立備份檔。完成後你可以再自行手動編輯添加或刪除任何設定。
 
----
-
 # 使用方式
 
 ## 1. 建立 tmux 工作環境
@@ -54,7 +52,8 @@ cat ~/.tmux.conf
 rm tmux-pencil.sh
 ```
 
-# Support & Donate
+# 支持＆贊助
+
 如果你覺得這個工具對你有幫助，歡迎給我們一個 GitHub ⭐️，非常感謝！
 
 <a href="https://www.buymeacoffee.com/penyt" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
