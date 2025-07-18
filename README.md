@@ -13,7 +13,7 @@ Since we're configuring tmux, it's recommended to stay inside a tmux session so 
 The command below will create a new session (`tpen`) with two windows (`setup` & `demo`), as some effects require multiple windows to demonstrate properly:
 
 ```sh
-tmux new-session -d -s tpen -n setup \; \
+tmux -f /dev/null new-session -d -s tpen -n setup \; \
 	set-option -t tpen:0 remain-on-exit on \; \
 	new-window -n demo \; \
 	select-window -t tpen:0 \; \
