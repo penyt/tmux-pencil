@@ -1,4 +1,4 @@
-# Tmux config setting script tool -- tmux-pencil
+# Tmux configuration setup script -- tmux-pencil
 [繁體中文 zh-tw](https://github.com/penyt/tmux-pencil/blob/main/README-zh-tw.md)
 
 This is a tool that can helps you set your tmux configuration easily. Just follow the instructions, and a kick-start .tmux.conf will be created.
