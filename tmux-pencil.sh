@@ -368,7 +368,7 @@ section_title "Windows Status (Active)"
 confirm=false
 echo -e "Choose Windows Status text (active). Default is \033[30;43m #I:#W* \033[0m."
 echo "💡 TIPs: You can use #I for window's index, #W for window's name."
-echo "         If you keep it empty, it will use   #I:#W  :D"
+echo "         If you keep it empty, it will use  ● #I:#W  :D"
 echo ""
 
 while [ "$confirm" = false ]; do
