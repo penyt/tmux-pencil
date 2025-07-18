@@ -24,7 +24,7 @@ tmux -f /dev/null new-session -d -s tpen -n setup \; \
 ## 2. Download & Set permission
 While in the tmux session, download the script to your home directory. You can delete it afterward.
 ```sh
-curl -o tmux-pencil.sh https://raw.githubusercontent.com/........
+curl -o tmux-pencil.sh https://raw.githubusercontent.com/penyt/tmux-pencil/refs/heads/main/tmux-pencil.sh
 ```
 Of course, you can also copy and paste the script contents manually.
 

@@ -24,7 +24,7 @@ tmux -f /dev/null new-session -d -s tpen -n setup \; \
 
 在 tmux session 中，將腳本下載至你的家目錄中。使用完畢後可自行刪除。
 ```sh
-curl -o tmux-pencil.sh https://raw.githubusercontent.com/........
+curl -o tmux-pencil.sh https://raw.githubusercontent.com/penyt/tmux-pencil/refs/heads/main/tmux-pencil.sh
 ```
 你也可以直接複製並貼上腳本內容。
 
