@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 BOLD='\033[1m'
 CYAN='\033[1;36m'
 BLACK='\033[1;30m'
@@ -16,8 +15,6 @@ add_comments() {
     echo "# $1" >> "$TMUX_CONF"
   fi
 }
-
-#####################################
 
 echo ""
 echo -e "      ${BLACK}+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
@@ -57,8 +54,6 @@ if [ -z "$TMUX" ]; then
 fi
 echo ""
 
-#####################################
-
 section_title "Back Up or Replace .tmux.conf"
 TMUX_CONF="$HOME/.tmux.conf"
 if [ -f "$TMUX_CONF" ]; then
@@ -89,8 +84,6 @@ fi
 echo ""
 
 
-#####################################
-
 section_title "Comment"
 echo "Would you like to include explanatory comments in your .tmux.conf file?"
 echo "[1] Yes, add comments."
@@ -101,8 +94,6 @@ echo ""
 echo "set -g default-terminal \"tmux-256color\""  >> "$TMUX_CONF"
 echo "set -ag terminal-overrides \",xterm-256color:RGB\"" >> "$TMUX_CONF"
 echo "" >> "$TMUX_CONF"
-
-#####################################
 
 section_title "Tmux Default Shell"
 user_default_shell=$(getent passwd "$USER" | cut -d: -f7)
@@ -122,8 +113,6 @@ echo ""
 add_comments "Set the default shell for tmux sessions"
 echo "set -g default-shell \"$default_shell_path\"" >> "$TMUX_CONF"
 echo "" >> "$TMUX_CONF"
-
-#####################################
 
 section_title "Prefix Keybinding"
 echo -e "Default prefix key is \033[30;43m Ctrl+b \033[0m."
@@ -172,8 +161,6 @@ echo "  ►► Your new prefix key is $new_prefix_trigger-$new_prefix_main."
 
 echo ""
 
-#####################################
-
 section_title "0-Based or 1-Based"
 confirm=false
 add_comments "Set the base index for tmux windows and panes"
@@ -201,8 +188,6 @@ while [ "$confirm" = false ]; do
 done
 echo ""
 echo "" >> "$TMUX_CONF"
-
-#####################################
 
 section_title "Left Block Text (Session Name)"
 confirm=false
@@ -236,8 +221,6 @@ left_length=$((length + buffer))
 tmux set-option status-left-length "$left_length"
 echo "set -g status-left-length $left_length" >> "$TMUX_CONF"
 
-#####################################
-
 section_title "Left Block bg"
 confirm=false
 while [ "$confirm" = false ]; do
@@ -257,13 +240,10 @@ while [ "$confirm" = false ]; do
 done
 echo ""
 
-#####################################
-
 section_title "Left Block prefix-on bg"
 confirm=false
 while [ "$confirm" = false ]; do
   read -p "Choose prefix-on bg color of the left block ✏️ : " left_prefix_bg_color
-  # echo ""
   if [[ -n "$left_prefix_bg_color" ]]; then
     last_left_prefix_bg_color=$left_prefix_bg_color
   fi
@@ -286,8 +266,6 @@ echo "🧪 TEST: Press your prefix key to see the effect immediately."
 read -p "[Dummy input] No matter what you type, press Enter to continue: " dummy_input
 echo "-----"
 echo ""
-
-#####################################
 
 section_title "Status Bar bg Color"
 confirm=false
@@ -314,15 +292,13 @@ add_comments "This is the main color of the status bar (tmux-pencil default is s
 echo "set -g status-style \"bg=$last_bg_color\"" >> "$TMUX_CONF"
 echo ""
 
-#####################################
-
 section_title "Windows Tab"
 confirm=false
 while [ "$confirm" = false ]; do
   read -p "Put windows tab (eg. 0:zsh* 1:ssh) in the center ✏️ (y/n): " center_windows_tab
   if [[ "$center_windows_tab" == [Nn] ]]; then
     echo ""
-  else  # if [[ "$center_windows_tab" == [Yy] ]]; then
+  else
     tmux set-option status-justify centre
     echo "set -g status-justify centre" >> "$TMUX_CONF"
     echo ""
@@ -331,8 +307,6 @@ while [ "$confirm" = false ]; do
 done
 
 echo "" >> "$TMUX_CONF"
-
-#####################################
 
 section_title "Windows Status (Inactive)"
 confirm=false
@@ -362,8 +336,6 @@ add_comments "Set the INACTIVE window status text format"
 
 echo "set -g window-status-format \"$last_windows_text_ina\"" >> "$TMUX_CONF"
 
-#####################################
-
 section_title "Windows Status (Active)"
 confirm=false
 echo -e "Choose Windows Status text (active). Default is \033[30;43m #I:#W* \033[0m."
@@ -391,9 +363,6 @@ add_comments "Set the ACTIVE window status text format, fg is the text color"
 echo "set -g window-status-current-format \"#[fg=#88C0D0] $last_windows_text_a\"" >> "$TMUX_CONF"
 
 echo "" >> "$TMUX_CONF"
-
-#####################################
-
 
 section_title "More Keybinds"
 
@@ -429,7 +398,6 @@ echo "unbind %" >> "$TMUX_CONF"
 echo "bind $last_split_lr split-window -h" >> "$TMUX_CONF"
 echo "" >> "$TMUX_CONF"
 
-
 confirm=false
 echo -e "Split the current pane become up & down, default is \033[30;43m Prefix + \" \033[0m."
 while [ "$confirm" = false ]; do
@@ -455,7 +423,6 @@ echo "unbind '\"'" >> "$TMUX_CONF"
 echo "bind '$last_split_ud' split-window -v" >> "$TMUX_CONF"
 echo "" >> "$TMUX_CONF"
 
-
 confirm=false
 while [ "$confirm" = false ]; do
   echo -e "Using \033[30;43m Prefix + r \033[0m to reload (\`tmux source-file ~/.tmux.conf\`) is convenient."
@@ -471,8 +438,6 @@ while [ "$confirm" = false ]; do
   fi
   confirm=true
 done
-
-#####################################
 
 section_title "Resize Pane"
 confirm=false
@@ -494,9 +459,6 @@ while [ "$confirm" = false ]; do
   confirm=true
 done
 
-
-#####################################
-
 section_title "Reload Right Away"
 reload_right_away=false
 read -p "Do you want to reload tmux to get new config right away? ✏️ (y/n): " reload_right_away
@@ -507,8 +469,6 @@ else
 fi
 echo ""
 echo ""
-
-#####################################
 
 echo "        ================================================================================="
 echo "          Congratulations! You’ve successfully created your .tmux.conf with tmux-pencil."
