@@ -5,6 +5,8 @@
 
 此工具僅會修改你的 `.tmux.conf` 檔案，或建立備份檔。完成後你可以再自行手動編輯添加或刪除任何設定。
 
+![tmux-pencil-logo](https://raw.githubusercontent.com/penyt/tmux-pencil/refs/heads/main/tmux-pencil-logo.png)
+
 # 使用方式
 
 ## 1. 建立 tmux 工作環境
