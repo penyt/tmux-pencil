@@ -5,7 +5,7 @@ This is a tool that can helps you set your tmux configuration easily. Just follo
 
 `tmux-pencil` only modifies your .tmux.conf or creates a backup file, you can edit it afterward as needed.
 
-![tmux-pencil-logo](https://raw.githubusercontent.com/penyt/tmux-pencil/refs/heads/main/tmux-pencil-logo.png)
+![tmux-pencil-logo](https://myrr.penli.quest/content/tmux-pencil/tmux-pencil-logo-text-trans.webp)
 
 # Usage
 
