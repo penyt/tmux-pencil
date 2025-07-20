@@ -16,9 +16,9 @@ The command below will create a new session (`tpen`) with two windows (`setup` &
 
 ```sh
 tmux -f /dev/null new-session -d -s tpen -n setup \; \
-	set-option -t tpen:0 remain-on-exit on \; \
+	set-option -t tpen:setup remain-on-exit on \; \
 	new-window -n demo \; \
-	select-window -t tpen:0 \; \
+	select-window -t tpen:setup \; \
 	attach-session -t tpen
 ```
 

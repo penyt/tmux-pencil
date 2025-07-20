@@ -16,9 +16,9 @@
 以下指令會建立一個名為 `tpen` 的 tmux session，並開啟兩個視窗（`setup` 和 `demo`）。這樣設置是因為有些效果需要在多個視窗中才能完整呈現：
 ```sh
 tmux -f /dev/null new-session -d -s tpen -n setup \; \
-  set-option -t tpen:0 remain-on-exit on \; \
+  set-option -t tpen:setup remain-on-exit on \; \
   new-window -n demo \; \
-  select-window -t tpen:0 \; \
+  select-window -t tpen:setup \; \
   attach-session -t tpen
 ```
 
