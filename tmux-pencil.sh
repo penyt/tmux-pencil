@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 BOLD='\033[1m'
 CYAN='\033[1;36m'
 BLACK='\033[1;30m'
